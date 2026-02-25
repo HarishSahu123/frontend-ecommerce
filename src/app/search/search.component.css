@@ -1,0 +1,34 @@
+button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  margin: 8px 0;
+  font-size: 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+button:hover {
+  background-color: #0c660f;
+    transform: translateY(-1px);
+}
+button:active {
+  transform: scale(0.97);
+}
+
+input{
+  background-color: black;
+  color: white;
+  text-align: left;
+  width: 300px;
+  size: 500px;
+   padding: 8px 10px;
+   border-radius: 10px;
+}
+input:focus {
+  border-color: #d66e1f;
+}
+
+
+

@@ -1,0 +1,46 @@
+<div class="register-container">
+
+  <h2>Create Account</h2>
+
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+    <div>
+      <label>Email</label>
+      <input type="email" formControlName="email">
+      <small *ngIf="submitted && registerForm.controls['email'].errors">
+        Valid email required
+      </small>
+    </div>
+
+    <div>
+      <label>Username</label>
+      <input type="text" formControlName="username">
+      <small *ngIf="submitted && registerForm.controls['username'].errors">
+        Username required
+      </small>
+    </div>
+
+    <div>
+      <label>Password</label>
+      <input type="password" formControlName="password">
+      <small *ngIf="submitted && registerForm.controls['password'].errors">
+        Minimum 6 characters required
+      </small>
+    </div>
+
+    <!-- Optional Role Selection -->
+    <div>
+      <label>Role</label>
+      <select formControlName="roleId">
+        <option [value]="1">User</option>
+        <option [value]="2">Admin</option>
+      </select>
+    </div>
+
+    <button type="submit">Register</button>
+
+  </form>
+
+
+
+</div>

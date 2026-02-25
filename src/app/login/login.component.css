@@ -1,0 +1,42 @@
+.login-container {
+  width: 350px;
+  margin: 60px auto;
+  padding: 20px;
+  border-radius: 8px;
+  background: #fafafa;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
+
+.response-box {
+  margin-top: 12px;
+  padding: 8px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.success {
+  background: #e6f7e6;
+  color: green;
+}
+
+.error {
+  background: #fdecea;
+  color: red;
+}

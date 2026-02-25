@@ -1,0 +1,51 @@
+<div class="container">
+
+  <h2>Product List</h2>
+
+  <div *ngIf="errorMessage" class="error">
+    {{ errorMessage }}
+  </div>
+
+  <div class="product-grid">
+
+    <div *ngFor="let product of products" 
+     class="card"
+     [routerLink]="['/product', product.product_id  ]"
+     style="cursor: pointer;"> >
+
+      <img [src]="'http://localhost:8081/api/v1/public/products/image/' + product.image"
+           alt="{{ product.productName }}">
+
+      <h3>{{ product.productName }}</h3>
+
+      <p>{{ product.description }}</p>
+
+      <div class="price">
+        ₹{{ product.special_price || product.price }}
+
+        <span *ngIf="product.special_price" class="old-price">
+          ₹{{ product.price }}
+        </span>
+
+        <span *ngIf="product.discount > 0" class="discount">
+          {{ product.discount }}% OFF
+        </span>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="pagination">
+    <button (click)="prevPage()" [disabled]="currentPage === 1">
+      Previous
+    </button>
+
+    Page {{ currentPage }} of {{ totalPages }}
+
+    <button (click)="nextPage()" [disabled]="currentPage === totalPages">
+      Next
+    </button>
+  </div>
+
+</div>

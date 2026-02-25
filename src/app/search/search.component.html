@@ -1,0 +1,11 @@
+<input  #Searchtxt type="text" placeholder="Search here">
+
+<button class="btl" (click)="sendSearch(Searchtxt.value)">Send Search</button>
+
+<br/>
+<input #txt type="text" placeholder="Search here">
+
+<button class="btl" (click)="sendme(txt.value)">Send me:</button>
+<br>
+<p>{{ Parentmessagetochild }}</p>
+<ng-content></ng-content>

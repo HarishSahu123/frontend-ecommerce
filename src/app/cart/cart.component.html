@@ -1,0 +1,41 @@
+<div class="cart-item" *ngFor="let item of products">
+
+  <!-- Product Image -->
+  <div class="image-section">
+    <img
+      [src]="imageBaseUrl + item.image"
+      alt="{{ item.productName }}">
+  </div>
+
+  <!-- Product Details -->
+  <div class="details-section">
+    <h3>{{ item.productName }}</h3>
+
+    <p>{{ item.description }}</p>
+
+    <p class="category">
+      Category: {{ item.category?.name }}
+    </p>
+
+    <!-- ✅ Quantity Controls -->
+    <div class="qty-box">
+
+      <button (click)="decreaseQty(item)">−</button>
+
+      <span>{{ item.quality }}</span>
+
+      <button (click)="increaseQty(item)">+</button>
+
+    </div>
+
+    <div class="price">
+      ₹{{ item.special_price || item.price }}
+
+      <span *ngIf="item.special_price" class="old-price">
+        ₹{{ item.price }}
+      </span>
+    </div>
+
+  </div>
+
+</div>
