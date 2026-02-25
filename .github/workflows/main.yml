@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout Repository
         uses: actions/checkout@v3
 
       - name: Setup Node
@@ -24,19 +24,19 @@ jobs:
         with:
           node-version: 18
 
-      - name: Install dependencies
+      - name: Install Dependencies
         run: npm install
 
-      - name: Build Angular app
+      - name: Build Angular App
         run: npm run build -- --configuration production
 
-      - name: Show dist folder (debug)
+      - name: Show Build Folder (Debug)
         run: ls -R dist
 
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v2.0
         with:
-          publish-dir: ./dist/frontend-ecommerce   # ⚠ change if project name different
+          publish-dir: ./dist/my-first-angular-app/browser
           production-branch: main
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
