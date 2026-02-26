@@ -1,16 +1,17 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from '../../environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
 
-   private baseUrl = 'https://backend-ecommerce-2-nnbi.onrender.com/api/v1/public/login';
+    private baseUrl = environment.apiBaseUrl;
 
   constructor(private http: HttpClient) {}
 
   login(credentials: any) {
-    return this.http.post(this.baseUrl, credentials);
+    return this.http.post(`${this.baseUrl}${environment.endpoints.register}`, credentials);
   }
 }

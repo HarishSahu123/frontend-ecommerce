@@ -3,13 +3,13 @@ export const environment = {
 
   appName: 'Angular Web Portal',
 
-   apiBaseUrl: 'http://localhost:8081',
+   apiBaseUrl: 'http://localhost:8080',
 
-  endpoints: {
-    login: '/auth/login',
-    register: '/auth/register',
-    tasks: '/task',
-    notifications: '/notification'
+ endpoints: {
+    login: '/api/v1/public/login',
+    register: 'api/v1/public/createUser',
+    // tasks: '/task',
+    // notifications: '/notification'
   },
 
   jwt: {
