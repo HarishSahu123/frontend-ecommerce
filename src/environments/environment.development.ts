@@ -8,8 +8,8 @@ export const environment = {
  endpoints: {
     login: '/api/v1/public/login',
     register: '/api/v1/public/createUser',
-    // tasks: '/task',
-    // notifications: '/notification'
+   productdetail:'/product/',
+   productlists:'/api/v1/public/products'
   },
 
   jwt: {
