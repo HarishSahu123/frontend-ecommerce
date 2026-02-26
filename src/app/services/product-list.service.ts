@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductListService {
 
-  private baseUrl = 'http://localhost:8081/api/v1/public/products';
+   private baseUrl = environment.apiBaseUrl;
 
   constructor(private http: HttpClient) {}
 
@@ -19,7 +20,7 @@ export class ProductListService {
       .set('sortBy', 'CategoryName')
       .set('sortOrder', 'desc');
 
-    return this.http.get<any>(this.baseUrl, { params });
+    return this.http.get<any>(`${this.baseUrl}${environment.endpoints.productlists}`, { params });
   }
   
   
